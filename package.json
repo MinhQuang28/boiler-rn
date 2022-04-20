@@ -15,15 +15,7 @@
     "type:check": "yarn tsc --noEmit --skipLibCheck",
     "test": "jest",
     "build:staging": "fastlane ios staging_build --env dev && fastlane android staging_build --env dev",
-    "lint": "eslint  index.js ./__tests__/** ./scripts/*.js  ./src/** --ext .js,.ts,.tsx",
-    "postinstall": "node ./scripts/setup.js",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js}": [
-      "eslint  --ext"
-    ]
-  },
+    "postinstall": "node ./scripts/setup.js"  },
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",
     "@react-native-community/masked-view": "^0.1.11",
@@ -61,9 +53,9 @@
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
     "@react-native-community/eslint-config": "^2.0.0",
-    "@types/react-native-vector-icons": "^6.4.10",
     "@types/jest": "^26.0.20",
     "@types/react-native": "^0.66.4",
+    "@types/react-native-vector-icons": "^6.4.10",
     "@types/react-redux": "^7.1.22",
     "@types/react-test-renderer": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
@@ -73,9 +65,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^7.14.0",
     "eslint-plugin-import": "^2.22.1",
-    "husky": "^7.0.4",
     "jest": "^26.6.3",
-    "lint-staged": "^12.2.2",
     "metro-react-native-babel-preset": "^0.66.2",
     "patch-package": "^6.4.7",
     "prettier": "^2.3.0",
