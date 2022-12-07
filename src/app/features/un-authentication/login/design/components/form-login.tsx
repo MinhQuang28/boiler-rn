@@ -21,10 +21,6 @@ const FormLoginComponent = ({ onSubmit }: FormLoginProps) => {
       yup.object().shape({
         name: yup.string().required('Name is required'),
         password: yup.string().required('Password is required'),
-        rePassword: yup
-          .string()
-          .required('Confirm password is required')
-          .oneOf([undefined, yup.ref('password')], 'Not Match'),
       }),
     [],
   );
@@ -42,16 +38,8 @@ const FormLoginComponent = ({ onSubmit }: FormLoginProps) => {
   return (
     <FormProvider {...formMethod}>
       <Input<FormLoginType> name={'name'} label={'Name'} />
-      <Input<FormLoginType>
-        nameTrigger="rePassword"
-        name={'password'}
-        label={'Password'}
-      />
-      <Input<FormLoginType>
-        onSubmit={onSubmitKey}
-        name={'rePassword'}
-        label={'Confirm Password'}
-      />
+      <Input<FormLoginType> name={'password'} label={'Password'} />
+
       <Button title={'Submit'} onPress={onSubmitKey} />
     </FormProvider>
   );

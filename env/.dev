@@ -1,5 +1,5 @@
 APP_ENV=Dev
-API_URL=https:/
+API_URL=https://api.unsplash.com/
 APP_DISPLAY_NAME=boilerplateRn-Dev
 APP_PLACEHOLDER_NAME=boilerplateRn
 VERSION_CODE=1

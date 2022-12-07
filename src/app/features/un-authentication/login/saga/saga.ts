@@ -7,18 +7,20 @@ import { actions } from '../redux/reducer';
 
 export function* onLogin(action: Action) {
   if (actions.onLogin.match(action)) {
-    const { body } = action.payload;
+    // const { body } = action.payload;
     yield* put(onStartProcess());
+    console.log(ApiConstants.LOGIN);
+
     const response = yield* call<NetWorkResponseType<unknown>>(
-      NetWorkService.Post,
+      NetWorkService.Get,
       {
-        url: ApiConstants.LOGIN,
-        body,
+        url: 'https://api.unsplash.com/photos/?client_id=F5223lQuu7LDrPNYx1g9h8_UlRw2SoSE65DtqTT7TJQ',
       },
     );
     yield* put(onEndProcess());
-    if (response) {
+    if (response?.data) {
       /// TODO
+      yield put(actions.onSuccess(response.data));
     }
   }
 }
